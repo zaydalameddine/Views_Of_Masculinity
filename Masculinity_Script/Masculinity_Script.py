@@ -57,8 +57,17 @@ for label in range(len(classifier.labels_)):
 cluster_zero_df = rows_to_cluster.iloc[cluster_zero_indices]
 cluster_one_df = rows_to_cluster.iloc[cluster_one_indices]
 
-print(cluster_zero_df['educ4'].value_counts())
-print(cluster_one_df['educ4'].value_counts())
+# checking the age distribution between the two clusters, numbers are shown as a percentage of people in each cluster
+print(cluster_zero_df['age3'].value_counts()/len(cluster_zero_df))
+print(cluster_one_df['age3'].value_counts()/len(cluster_one_df))
+
+# checking the education distribution between the two clusters, numbers are shown as a percentage of people in each cluster
+print(cluster_zero_df['educ4'].value_counts()/len(cluster_zero_df))
+print(cluster_one_df['educ4'].value_counts()/len(cluster_one_df))
+
+# it looks like the distribution of each cluster is by education and not by age hence
+# people who answered these questions are split by their level of education and not by their
+# masculine or feminine categories
 
 
 
